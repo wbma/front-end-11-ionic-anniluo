@@ -1,18 +1,10 @@
-<!--
-  Generated template for the FrontPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>front</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+<div>Display this content when logged in</div>
+<div class="img-deck">
+  <div class="img-container" *ngFor="let media of mediaArray">
+    <img class="img-top" [src]="mediaService.uploadsUrl + media.thumbnail" [alt]="media.title">
+    <div class="img-body">
+      <h5 class="img-title">{{ media.title }}</h5>
+      <p class="img-text">{{ media.description }}</p>
+    </div>
+  </div>
+</div>
