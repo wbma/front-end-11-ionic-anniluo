@@ -1,0 +1,8 @@
+{
+  "name": "task8ionic",
+  "app_id": "5c805ee0",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
