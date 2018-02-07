@@ -5,6 +5,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { FrontPage } from "../pages/front/front";
+import { LoginPage } from "../pages/login/login";
+import { RegisterPage } from "../pages/register/register";
+import { UploadPage } from "../pages/upload/upload";
+import { LogoutPage } from "../pages/logout/logout";
 
 @Component({
   templateUrl: 'app.html'
@@ -23,6 +28,11 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
+      { title: 'Front', component: FrontPage },
+      { title: 'Login', component: LoginPage },
+      { title: 'Register', component: RegisterPage },
+      { title: 'Upload', component: UploadPage },
+      { title: 'Logout', component: LogoutPage},
     ];
 
   }

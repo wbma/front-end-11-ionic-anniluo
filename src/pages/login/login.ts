@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {HttpErrorResponse} from "@angular/common/http";
+import {MediaProvider} from "../../providers/media/media";
 
 /**
  * Generated class for the LoginPage page.
@@ -15,11 +17,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public mediaProvider: MediaProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    if (localStorage.getItem('localToken') !== null) {
+      this.mediaProvider.getUserData().subscribe(response => {
+        // this.router.navigate(['front']);
+      }, (error: HttpErrorResponse) => {
+        console.log(error.error.message);
+      });
+    }
   }
-
 }

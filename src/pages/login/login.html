@@ -1,7 +1,16 @@
-<input [(ngModel)] = "mediaService.username">
-<br>
-<input [(ngModel)] = "mediaService.password">
-<br>
-<button (click)="mediaService.login()">Login</button>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
 
-{{ mediaService.status }}
+<input [(ngModel)] = "mediaProvider.username">
+<br>
+<input [(ngModel)] = "mediaProvider.password">
+<br>
+<button (click)="mediaProvider.login()">Login</button>
+
+{{ mediaProvider.status }}

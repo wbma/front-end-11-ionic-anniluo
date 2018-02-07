@@ -9,22 +9,39 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MediaProvider } from '../providers/media/media';
+import { FrontPage } from "../pages/front/front";
+import { LoginPage } from "../pages/login/login";
+import { LogoutPage } from "../pages/logout/logout";
+import { RegisterPage } from "../pages/register/register";
+import { UploadPage } from "../pages/upload/upload";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    FrontPage,
+    LoginPage,
+    LogoutPage,
+    RegisterPage,
+    UploadPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    FrontPage,
+    LoginPage,
+    LogoutPage,
+    RegisterPage,
+    UploadPage
   ],
   providers: [
     StatusBar,
