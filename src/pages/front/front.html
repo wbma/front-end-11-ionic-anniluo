@@ -11,7 +11,8 @@
 
 <div class="img-deck">
   <div class="img-container" *ngFor="let media of mediaArray">
-    <img class="img-top" [src]="mediaProvider.uploadsUrl + media.thumbnail" [alt]="media.title">
+    <img [alt]="media?.title" [src]="mediaProvider.uploadsUrl + (media?.filename | thumbnail: 'small')">
+    <!-- should transform: SOMEIMAGE.jpg => SOMEIMAGE-tn160.png -->
     <div class="img-body">
       <h5 class="img-title">{{ media.title }}</h5>
       <p class="img-text">{{ media.description }}</p>

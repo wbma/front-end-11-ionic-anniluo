@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {MediaProvider} from "../../providers/media/media";
 import {HttpErrorResponse} from "@angular/common/http";
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the FrontPage page.
@@ -28,7 +29,7 @@ export class FrontPage {
       this.displayImgs();
     }, (error: HttpErrorResponse) => {
       console.log(error);
-      // this.router.navigate(['login']);
+      this.navCtrl.push(LoginPage);
     });
   }
 
@@ -36,13 +37,7 @@ export class FrontPage {
     this.mediaProvider.getNewFiles().subscribe(response => {
       console.log(response);
       this.mediaArray = response;
-      this.mediaArray.map( media => {
-        const temp = media.filename.split('.');
-        const thumbName = temp[0] + '-tn320.png';
-        media.thumbnail = thumbName;
-      });
       console.log(this.mediaArray);
     });
   }
-
 }

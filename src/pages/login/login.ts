@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HttpErrorResponse} from "@angular/common/http";
 import {MediaProvider} from "../../providers/media/media";
+import {FrontPage} from "../front/front";
 
 /**
  * Generated class for the LoginPage page.
@@ -23,7 +24,7 @@ export class LoginPage {
   ionViewDidLoad() {
     if (localStorage.getItem('localToken') !== null) {
       this.mediaProvider.getUserData().subscribe(response => {
-        // this.router.navigate(['front']);
+        this.navCtrl.push(FrontPage);
       }, (error: HttpErrorResponse) => {
         console.log(error.error.message);
       });

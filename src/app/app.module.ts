@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {IonicApp, IonicErrorHandler, IonicModule, Thumbnail} from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,7 +14,8 @@ import { LoginPage } from "../pages/login/login";
 import { LogoutPage } from "../pages/logout/logout";
 import { RegisterPage } from "../pages/register/register";
 import { UploadPage } from "../pages/upload/upload";
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
+import { ThumbnailPipe } from "../pipes/thumbnail/thumbnail";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {HttpClientModule} from "@angular/common/http";
     LoginPage,
     LogoutPage,
     RegisterPage,
-    UploadPage
+    UploadPage,
+    ThumbnailPipe,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import {HttpClientModule} from "@angular/common/http";
     LoginPage,
     LogoutPage,
     RegisterPage,
-    UploadPage
+    UploadPage,
   ],
   providers: [
     StatusBar,
